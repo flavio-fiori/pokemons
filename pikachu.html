@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .pikachu {
+            width: 100%;
+            height: 100vh;
+            display: block;
+            padding: 14rem 0;
+            /* background-color: lightgray; */
+        }
+
+        .pikachu__head {
+            width: 370px;
+            height: 330px;
+            background-color: #ffd01c;
+            border-radius: 45%;
+            margin: auto;
+            border: 5px solid #000;
+            position: relative;
+            box-shadow: inset -10px -8px 0 #d8851c;
+        }
+
+        .pikachu__container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            border-radius: 45%;
+            z-index: 1;
+        }
+
+        .pikachu__ears {
+            width: 450px;
+            height: 70px;
+            display: block;
+            background-color: #ffd01c;
+            position: absolute;
+            top: 0;
+            border: 5px solid #000;
+            z-index: -1;
+            overflow: hidden;
+            box-shadow: inset -4px -5px 0 #d8851c;
+        }
+
+        .pikachu__ears::before{
+            content: '';
+            width: 60px;
+            height: 100%;
+            display: block;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+        }
+
+        .pikachu__ears--left {
+            border-radius: 50% 0 0 50%;
+            transform: rotate(45deg);
+            left: -95px;                        
+            animation: moveEars 5s infinite alternate;
+        }
+
+        .pikachu__ears--left::before{
+            left: 0;
+        }
+
+        .pikachu__ears--right {
+            border-radius: 0 50% 50% 0;
+            transform: rotate(-90deg);
+            right: -135px;
+        }
+
+        .pikachu__ears--right::before{
+            right: 0;
+        }
+
+        .pikachu__eyes {
+            width: 70px;
+            height: 70px;
+            display: block;
+            background-color: #000;
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .pikachu__eyes::before {
+            content: '';
+            width: 30px;
+            height: 30px;
+            display: block;
+            background-color: #FFF;
+            border-radius: 100%;
+            position: absolute;
+            top: 0.5rem;
+            animation: shake .2s linear infinite alternate;
+        }
+
+        .pikachu__eyes--left {
+            left: 4rem;
+        }
+
+        .pikachu__eyes--left::before {
+            right: 0.75rem;
+        }
+
+        .pikachu__eyes--right {
+            right: 4rem;
+        }
+
+        .pikachu__eyes--right::before {
+            left: 0.75rem;
+        }
+
+        .pikachu__hunchback {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            border: 3px solid #000;
+            position: absolute;
+            bottom: 3rem;
+            border-radius: 100%;
+        }
+
+        .pikachu__hunchback--left {
+            left: 0;
+        }
+
+        .pikachu__hunchback--right {
+            right: 0;
+        }
+
+        .pikachu__mouth{
+            width: 100%;
+            display: block;
+            position: absolute;
+            bottom: 4rem;
+            left: 0;
+        }
+
+        .pikachu__nose{
+            width: 0; 
+            height: 0; 
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            margin: auto;
+            
+            border-top: 10px solid #000;
+        }
+
+        .pikachu__language{
+            width: 60px;
+            height: 60px;
+            border-radius: 0 0 100% 100%;
+            border: 2px solid #000;
+            margin: 1rem auto 0 auto;
+            background-color: #9e2d38;
+            position: relative;
+            overflow: hidden;
+        }
+        .pikachu__language::before{
+            content: '';
+            display: block;
+            width: 60px;
+            height: 40px;
+            background: #e93c4e;
+            position: absolute;
+            bottom: -5px;
+            border-radius: 100%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 3px solid #000;
+            box-sizing: border-box;
+        }
+
+        @keyframes shake{
+            to{
+                transform: translateX(0px);
+            }
+            from{
+                transform: translateX(1px);
+            }
+        }
+
+        @keyframes moveEars{
+            0% {
+                transform: rotate(50deg);
+            }
+            5% {
+                transform: rotate(60deg);
+            }
+            10% {
+                transform: rotate(50deg);
+            }
+            12% {
+                transform: rotate(55deg);
+            }
+            15% {
+                transform: rotate(50deg);
+            }
+            100% {
+                transform: rotate(50deg);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="pikachu">
+        <div class="pikachu__head">
+
+            <div class="pikachu__ears pikachu__ears--left"></div>
+            <div class="pikachu__ears pikachu__ears--right"></div>
+
+            <div class="pikachu__container">
+
+                <div class="pikachu__eyes pikachu__eyes--left"></div>
+                <div class="pikachu__eyes pikachu__eyes--right"></div>
+
+                <div class="pikachu__hunchback pikachu__hunchback--left"></div>
+                <div class="pikachu__hunchback pikachu__hunchback--right"></div>
+
+
+                <div class="pikachu__mouth">
+                    <div class="pikachu__nose"></div>
+                    <div class="pikachu__language"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
